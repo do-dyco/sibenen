@@ -1,0 +1,147 @@
+import { StyleSheet } from "react-native";
+
+export const profileStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#F8F9FA",
+    marginBottom: 48,
+  },
+  headerContainer: {
+    alignItems: "center",
+    backgroundColor: "#FFF",
+    paddingVertical: 30,
+    paddingHorizontal: 20,
+    marginBottom: 20,
+  },
+  avatarContainer: {
+    position: "relative",
+    marginBottom: 15,
+  },
+  avatar: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    backgroundColor: "#E5E5E5",
+  },
+  editAvatarButton: {
+    position: "absolute",
+    bottom: 5,
+    right: 5,
+    backgroundColor: "#007AFF",
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 3,
+    borderColor: "#FFF",
+  },
+  verifiedBadge: {
+    position: "absolute",
+    top: 5,
+    right: 5,
+    backgroundColor: "#FFF",
+    borderRadius: 15,
+    padding: 2,
+  },
+  userName: {
+    fontSize: 28,
+    fontWeight: "bold",
+    color: "#1C1C1E",
+    marginBottom: 5,
+  },
+  joinDate: {
+    fontSize: 16,
+    color: "#8E8E93",
+  },
+  section: {
+    paddingHorizontal: 20,
+    marginBottom: 25,
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: "600",
+    color: "#1C1C1E",
+    marginBottom: 15,
+    marginLeft: 5,
+  },
+  infoCard: {
+    backgroundColor: "#FFF",
+    marginBottom: 12,
+    borderRadius: 12,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  infoCardContent: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 18,
+  },
+  infoText: {
+    marginLeft: 15,
+    fontSize: 16,
+    color: "#1C1C1E",
+    flex: 1,
+  },
+  menuItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    backgroundColor: "#FFF",
+    padding: 18,
+    marginBottom: 12,
+    borderRadius: 12,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  dangerMenuItem: {
+    borderColor: "#FF3B30",
+    borderWidth: 1,
+  },
+  menuItemLeft: {
+    flexDirection: "row",
+    alignItems: "center",
+    flex: 1,
+  },
+  menuIconContainer: {
+    width: 44,
+    height: 44,
+    backgroundColor: "#F2F2F7",
+    borderRadius: 22,
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 15,
+  },
+  dangerIconContainer: {
+    backgroundColor: "#FFE8E6",
+  },
+  menuItemText: {
+    fontSize: 17,
+    color: "#1C1C1E",
+    flex: 1,
+  },
+  dangerText: {
+    color: "#FF3B30",
+    fontWeight: "600",
+  },
+  versionContainer: {
+    alignItems: "center",
+    paddingBottom: 30,
+  },
+  versionText: {
+    fontSize: 14,
+    color: "#8E8E93",
+  },
+});
