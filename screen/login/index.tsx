@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "expo-router";
+import { Alert } from "react-native";
 import {
   Entypo,
   FontAwesome,
@@ -34,8 +35,13 @@ export default function LoginScreen() {
   const [showAlert, setShowAlert] = useState(false);
 
   const handleLogin = () => {
+    try {
     console.log("Login dengan:", username, password);
     router.push("/(tabs)"); // contoh redirect
+    } catch (error) {
+      console.error("Login error:", error);
+      Alert.alert("Error", "Terjadi kesalahan saat login");
+    }
   };
 
   return (

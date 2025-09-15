@@ -75,17 +75,25 @@ const ProfileScreen = () => {
   };
 
   const handleLogout = () => {
+    try {
     Alert.alert("Keluar", "Apakah Anda yakin ingin keluar dari akun?", [
       { text: "Batal", style: "cancel" },
       {
         text: "Keluar",
         style: "destructive",
-        onPress: () => {
-          router.push("/login");
+            try {
+              router.push("/login");
+              console.log("User logged out");
+            } catch (error) {
+              console.error("Logout navigation error:", error);
+            }
           console.log("User logged out");
         },
       },
     ]);
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
   };
 
   const ProfileHeader = () => (
