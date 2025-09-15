@@ -7,41 +7,25 @@ import {
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect, Component } from "react";
-import { View, Text } from "react-native";
+import { useEffect, ErrorBoundary as ReactErrorBoundary } from "react";
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/components/useColorScheme";
 
-// Custom Error Boundary for production builds
-class CustomErrorBoundary extends Component<
-  { children: React.ReactNode },
-  { hasError: boolean }
-> {
-  constructor(props: { children: React.ReactNode }) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: Error, errorInfo: any) {
-    console.log('Error caught by boundary:', error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
+// Custom Erro
+import { useFrameworkReady } from '@/hooks/useFrameworkReady'r Boundary for production builds
+function CustomErrorBoundary({ children }: { children: React.ReactNode }) {
+  return (
+    <ReactErrorBoundary
+      fallback={
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <Text>Something went wrong. Please restart the app.</Text>
         </View>
-      );
-    }
-
-    return this.props.children;
-  }
+      }
+    >
+      {children}
+    </ReactErrorBoundary>
+  );
 }
 
 export { CustomErrorBoundary as ErrorBoundary };
@@ -79,6 +63,7 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
+  useFrameworkReady();
   const colorScheme = useColorScheme();
 
   return (
